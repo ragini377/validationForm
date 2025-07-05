@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+        <div> 
+        <p id="reactionResult"></p>
+        </div>
+    <div id="msg">
+
+       <div id="error"></div>
+        <div id="success"></div>
+        
+    </div>
+    
+    <div class="warraper">
+        <h1>Form </h1>
+        
+        <div class="formelement">
+
+            <label for="email">Email : </label> 
+            <input type="text" id="email" placeholder="user@example.com">       
+        </div>      
+        <div class="formelement">
+
+            <label for="phoneno">Phone : </label> 
+            <input type="text" id="phoneno" maxlength="10" placeholder="maxlength-10 & start with 6-9">       
+        </div> 
+         
+        <div class="formelement">
+
+            <label for="password">Password : </label> 
+             <input type="password" id="password" maxlength="8">   
+             <span id="togglePassword">👁️</span>  
+             
+        </div> 
+        <div class="formelement">
+
+            <p   id="Formatshow">(Password must be 8 in length with one uppercase,one lowercase,one number). </p> 
+            </div>
+              <div class="formelement">
+
+            <label for="confirmpassword">Confirm Password : </label> 
+             <input type="password" id="confirmpassword" maxlength="8">   
+             <span id="togglePassword1">👁️</span>  
+             
+        </div> 
+        <input type="submit" id="submitbutton">
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
