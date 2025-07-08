@@ -20,7 +20,6 @@ $("#phoneno").on("input", function () {
   this.value = this.value.replace(/[^0-9]/g, '');
 });
 
-
 //check email validation code
 function isEmail(email) {
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
