@@ -8,6 +8,18 @@ $(document).ready(function () {
 var errormsg = "";
 var missingfield= "";
 
+//  Restrict user from typing letters or symbols
+$("#phoneno").on("keypress", function (e) {
+  if (e.which < 48 || e.which > 57) {
+    e.preventDefault(); // block non-numeric keys
+  }
+});
+
+// Clean pasted input (remove characters)
+$("#phoneno").on("input", function () {
+  this.value = this.value.replace(/[^0-9]/g, '');
+});
+
 
 //check email validation code
 function isEmail(email) {
