@@ -37,8 +37,13 @@ function isPassword(password) {
     var regex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8}$/; //(ex-Secure@789)
      return regex.test(password);
 }
-
-
+//check Confirm password validation
+function isPassword1(confirmpassword) {
+    var confirmpassword = $("#confirmpassword").val().trim();
+    
+    var regex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8}$/; //(ex-Secure@789)
+     return regex.test(confirmpassword);
+}
 
 
 // show and hide password
@@ -107,11 +112,15 @@ $("#submitbutton").click(function(){
     }
 
 
- //for  password  validation and check empty
+ //for confirm password  validation and check empty
     if($("#confirmpassword").val() == "")
     {
       missingfield +="<p>Please fill Confirm Password</p>";
       $("#error").html( missingfield);
+    }
+    else if(isPassword1($("#confirmpassword").val()) == false){
+        errormsg += "<p>ConfirmPassword is not in correct format</p>";
+         $("#error").html(errormsg);
     }
     else if($("#confirmpassword").val() != $("#password").val()){
         errormsg += "<p>Confirm Password not matched with Password</p>";
