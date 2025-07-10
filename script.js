@@ -4,7 +4,13 @@ let formStartTime;
 $(document).ready(function () {
     formStartTime = new Date().getTime();
 });
-
+$(document).ready(function() {
+      // Disable paste on confirm password field
+      $("#confirmpassword").on("paste", function(e) {
+          e.preventDefault();
+          alert('enter confirm password manually')
+      });
+  });
 var errormsg = "";
 var missingfield= "";
 
@@ -34,14 +40,14 @@ function isPhone(phoneno) {
 //check password validation
 function isPassword(password) {
     var password = $("#password").val().trim();
-    var regex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8}$/; //(ex-Secure@789)
+    var regex =   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$/;
      return regex.test(password);
 }
 //check Confirm password validation
 function isPassword1(confirmpassword) {
     var confirmpassword = $("#confirmpassword").val().trim();
     
-    var regex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8}$/; //(ex-Secure@789)
+    var regex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$/;
      return regex.test(confirmpassword);
 }
 
