@@ -82,6 +82,9 @@ function isPassword1(confirmpassword) {
 //submit button Click Event
 
 $("#submitbutton").click(function(){
+    $("#error").html(""); 
+    $("#success").html("");
+    $("#reactionResult").html("");
       
 var errormsg = "";
 var missingfield= "";
